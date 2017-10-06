@@ -1,3 +1,11 @@
+var HTMLWebpackPlugin = require('html-webpack-plugin');
+
+var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+	template: __dirname + '/src/index.html',
+	filename: 'index.html',
+	inject: 'body'
+})
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
@@ -13,5 +21,6 @@ module.exports = {
 				presets: ['es2015', 'env', 'react']
 			}
 		}]
-	}
-}
+	},
+	plugins: [HTMLWebpackPluginConfig]
+};
